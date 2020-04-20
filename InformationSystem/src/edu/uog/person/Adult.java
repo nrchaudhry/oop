@@ -6,6 +6,6 @@ public class Adult extends Person {
 		if (age<18)
 			System.out.println("Invalid Age!");
 		else
-			super.setAge(age); 
+			super.setAGE(age); 
 	}
 }

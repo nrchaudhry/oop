@@ -1,9 +1,9 @@
 package edu.uog;
 
-import edu.uog.employee.Employee;
 import edu.uog.person.Adult;
 import edu.uog.person.Person;
 import edu.uog.student.Student;
+import edu.uog.employee.Employee;
 
 public class InformationSystem {
 
@@ -24,7 +24,6 @@ public class InformationSystem {
 //		System.out.println("Name : "+p1.getName());
 //		System.out.println("Roll No : "+p1.getRollNo());
 		
-		p1.eat();
 		e1.eat();
 		
 		
