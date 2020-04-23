@@ -2,6 +2,8 @@ package edu.uog.person;
 
 public class Person {
 	
+	public static String csvFile = "D:\\Persons.csv";
+
 	private int PERSON_ID;
 	
 	private String TITLE;
@@ -72,4 +74,16 @@ public class Person {
 		ADDRESS = aDDRESS;
 	}
 
+	public String toString() {
+		String str = null;
+		
+		str = this.PERSON_ID
+				+ "," + this.FORE_NAME
+				+ "," + this.SUR_NAME
+				+ "," + this.AGE
+				+ "," + this.GENDER
+				+ "," + this.ADDRESS;
+		
+		return str;
+	}
 }

@@ -2,6 +2,8 @@ package edu.uog.timetable;
 
 public class WeekDay {
 
+	public static String csvFile = "D:\\WeekDays.csv";
+
 	private int WEEKDAY_ID;
 	
 	private String WEEKDAY_NAME;
@@ -22,4 +24,12 @@ public class WeekDay {
 		WEEKDAY_NAME = wEEKDAY_NAME;
 	}
 	
+	public String toString() {
+		String str = null;
+		
+		str = this.WEEKDAY_ID
+				+ "," + this.WEEKDAY_NAME;
+		
+		return str;
+	}
 }

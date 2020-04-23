@@ -4,6 +4,8 @@ import edu.uog.person.Person;
 
 public class Student extends Person {
 
+	public static String csvFile = "D:\\Students.csv";
+
 	private int STUDENT_ID;
 	
 	private String STUDENT_ROLLNO;
@@ -43,4 +45,16 @@ public class Student extends Person {
 	public void setSTUDY_YEAR(String sTUDY_YEAR) {
 		STUDY_YEAR = sTUDY_YEAR;
 	}
+
+	public String toString() {
+		String str = null;
+		
+		str = this.STUDENT_ID
+				+ "," + this.STUDENT_ROLLNO
+				+ "," + this.STUDY_PROGRAM
+				+ "," + this.STUDY_YEAR;
+		
+		return str;
+	}
+
 }

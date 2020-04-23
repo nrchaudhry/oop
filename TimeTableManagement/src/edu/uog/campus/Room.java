@@ -2,6 +2,8 @@ package edu.uog.campus;
 
 public class Room {
 
+	public static String csvFile = "D:\\Rooms.csv";
+
 	private int ROOM_ID;
 	
 	private String ROOM_NAME;
@@ -50,6 +52,18 @@ public class Room {
 
 	public void setROOM_TYPE(String rOOM_TYPE) {
 		ROOM_TYPE = rOOM_TYPE;
+	}
+	
+	public String toString() {
+		String str = null;
+		
+		str = this.ROOM_ID
+				+ "," + this.ROOM_NAME
+				+ "," + this.ROOM_FLOUR
+				+ "," + this.ROOM_CAPACITY
+				+ "," + this.ROOM_TYPE;
+		
+		return str;
 	}
 	
 }

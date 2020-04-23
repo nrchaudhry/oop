@@ -2,6 +2,8 @@ package edu.uog.timetable;
 
 public class TimeSlot {
 
+	public static String csvFile = "D:\\TimeSlots.csv";
+
 	private int TIMESLOT_ID;
 	
 	private WeekDay WEEKDAY_ID;
@@ -42,4 +44,14 @@ public class TimeSlot {
 		TIMESLOT_END = tIMESLOT_END;
 	}
 	
+	public String toString() {
+		String str = null;
+		
+		str = this.TIMESLOT_ID
+				+ "," + this.WEEKDAY_ID.getWEEKDAY_ID()
+				+ "," + this.TIMESLOT_START
+				+ "," + this.TIMESLOT_END;
+		
+		return str;
+	}
 }

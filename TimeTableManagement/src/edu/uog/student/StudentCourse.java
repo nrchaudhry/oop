@@ -4,6 +4,8 @@ import edu.uog.course.Course;
 
 public class StudentCourse {
 
+	public static String csvFile = "D:\\StudentCourses.csv";
+
 	private int STUDENTCOURSE_ID;
 	
 	private Course COURSE_ID;
@@ -44,4 +46,14 @@ public class StudentCourse {
 		SECTION = sECTION;
 	}
 
+	public String toString() {
+		String str = null;
+		
+		str = this.STUDENTCOURSE_ID
+				+ "," + this.COURSE_ID.getCOURSE_ID()
+				+ "," + this.STUDENT_ID.getPERSON_ID()
+				+ "," + this.SECTION;
+		
+		return str;
+	}
 }

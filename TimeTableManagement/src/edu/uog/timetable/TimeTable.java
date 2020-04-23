@@ -5,6 +5,8 @@ import edu.uog.teacher.TeacherCourse;
 
 public class TimeTable {
 
+	public static String csvFile = "D:\\TimeTable.csv";
+
 	private int TIMETABLE_ID;
 	
 	private TeacherCourse TEACHERCOURSE_ID;
@@ -45,4 +47,14 @@ public class TimeTable {
 		ROOM_ID = rOOM_ID;
 	}
 
+	public String toString() {
+		String str = null;
+		
+		str = this.TIMETABLE_ID
+				+ "," + this.TEACHERCOURSE_ID.getTEACHERCOURSE_ID()
+				+ "," + this.TIMESLOT_ID.getTIMESLOT_ID()
+				+ "," + this.ROOM_ID.getROOM_ID();
+		
+		return str;
+	}
 }

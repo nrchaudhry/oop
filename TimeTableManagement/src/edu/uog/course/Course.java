@@ -2,6 +2,8 @@ package edu.uog.course;
 
 public class Course {
 
+	public static String csvFile = "D:\\Coures.csv";
+
 	private int COURSE_ID;
 	
 	private String COURSE_CODE;
@@ -62,4 +64,16 @@ public class Course {
 		COURSEPRERQUIST_ID = cOURSEPRERQUIST_ID;
 	}
 
+	public String toString() {
+		String str = null;
+		
+		str = this.COURSE_ID
+				+ "," + this.COURSEPRERQUIST_ID
+				+ "," + this.COURSE_CODE
+				+ "," + this.COURSE_TITLE
+				+ "," + this.COURSE_CREDITHOUR
+				+ "," + this.COURSE_DESC;
+		
+		return str;
+	}
 }
