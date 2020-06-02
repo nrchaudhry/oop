@@ -19,6 +19,7 @@ public class Student extends Person {
 	}
 
 	public void setSTUDENT_ID(int sTUDENT_ID) {
+		AGE = 10;
 		STUDENT_ID = sTUDENT_ID;
 	}
 

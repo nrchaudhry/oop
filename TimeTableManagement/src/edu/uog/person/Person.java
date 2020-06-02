@@ -12,7 +12,7 @@ public class Person {
 	
 	private String SUR_NAME;
 
-	private int AGE;
+	protected int AGE;
 	
 	private String GENDER;
 

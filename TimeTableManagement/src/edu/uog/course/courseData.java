@@ -22,14 +22,21 @@ public class courseData {
 			
 			while ((line = bufferreader.readLine()) != null) {
 				Course course = new Course();
+				Course prerequistcourse = new Course();
 				
 				String[] courseRow = line.split(",");
 				
 				course.setCOURSE_ID(Integer.parseInt(courseRow[0]));
-//				course.setCOURSE_NAME(courseRow[1]);
-//				course.setCOURSE_FLOUR(Integer.parseInt(courseRow[2]));
-//				course.setCOURSE_CAPACITY(Integer.parseInt(courseRow[3]));
-//				course.setCOURSE_TYPE(courseRow[4]);
+				course.setCOURSE_CODE(courseRow[1]);
+				course.setCOURSE_TITLE(courseRow[2]);
+				course.setCOURSE_DESC(courseRow[3]);
+				course.setCOURSE_CREDITHOUR(Integer.parseInt(courseRow[4]));
+				
+				if (courseRow.length>5) {
+					courseData cdata = new courseData();
+					prerequistcourse = cdata.findOne(Integer.parseInt(courseRow[5]));
+					course.setCOURSEPRERQUIST_ID(prerequistcourse);
+				}
 				
 				courses.add(course);
 			}
@@ -50,16 +57,23 @@ public class courseData {
 			
 			while ((line = bufferreader.readLine()) != null) {
 				Course course = new Course();
+				Course prerequistcourse = new Course();
 				
 				String[] courseRow = line.split(",");
 				
 				if (Integer.parseInt(courseRow[0]) == course_ID) {
 					course.setCOURSE_ID(Integer.parseInt(courseRow[0]));
-//					course.setCOURSE_NAME(courseRow[1]);
-//					course.setCOURSE_FLOUR(Integer.parseInt(courseRow[2]));
-//					course.setCOURSE_CAPACITY(Integer.parseInt(courseRow[3]));
-//					course.setCOURSE_TYPE(courseRow[4]);
+					course.setCOURSE_CODE(courseRow[1]);
+					course.setCOURSE_TITLE(courseRow[2]);
+					course.setCOURSE_DESC(courseRow[3]);
+					course.setCOURSE_CREDITHOUR(Integer.parseInt(courseRow[4]));
 					
+					if (courseRow.length>5) {
+						courseData cdata = new courseData();
+						prerequistcourse = cdata.findOne(Integer.parseInt(courseRow[5]));
+						course.setCOURSEPRERQUIST_ID(prerequistcourse);
+					}
+										
 					return course;
 				}
 			}

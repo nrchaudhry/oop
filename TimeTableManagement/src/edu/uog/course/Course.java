@@ -2,7 +2,7 @@ package edu.uog.course;
 
 public class Course {
 
-	public static String csvFile = "D:\\Coures.csv";
+	public static String csvFile = "H:\\Courses.csv";
 
 	private int COURSE_ID;
 	
@@ -12,7 +12,7 @@ public class Course {
 	
 	private String COURSE_DESC;
 	
-	private String COURSE_CREDITHOUR;
+	private int COURSE_CREDITHOUR;
 	
 	private Course COURSEPRERQUIST_ID;
 
@@ -48,11 +48,11 @@ public class Course {
 		COURSE_DESC = cOURSE_DESC;
 	}
 
-	public String getCOURSE_CREDITHOUR() {
+	public int getCOURSE_CREDITHOUR() {
 		return COURSE_CREDITHOUR;
 	}
 
-	public void setCOURSE_CREDITHOUR(String cOURSE_CREDITHOUR) {
+	public void setCOURSE_CREDITHOUR(int cOURSE_CREDITHOUR) {
 		COURSE_CREDITHOUR = cOURSE_CREDITHOUR;
 	}
 
@@ -68,11 +68,11 @@ public class Course {
 		String str = null;
 		
 		str = this.COURSE_ID
-				+ "," + this.COURSEPRERQUIST_ID
 				+ "," + this.COURSE_CODE
 				+ "," + this.COURSE_TITLE
+				+ "," + this.COURSE_DESC
 				+ "," + this.COURSE_CREDITHOUR
-				+ "," + this.COURSE_DESC;
+				+ "," + this.COURSEPRERQUIST_ID;
 		
 		return str;
 	}

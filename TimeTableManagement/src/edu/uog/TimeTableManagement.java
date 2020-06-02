@@ -2,48 +2,48 @@ package edu.uog;
 
 import java.util.List;
 
-import edu.uog.campus.Room;
-import edu.uog.campus.roomData;
+import edu.uog.course.Course;
+import edu.uog.course.courseData;
 
 public class TimeTableManagement {
 
 	public static void main(String[] args) {
-		roomData roomdata = new roomData();
+		courseData coursedata = new courseData();
 		
-		System.out.println("FindOne");
-		Room room = roomdata.findOne(3);
-		System.out.println(room.toString());
-		System.out.println("---------------------------------");
+//		System.out.println("FindOne");
+//		Course course = coursedata.findOne(1);
+//		System.out.println(course.toString());
+//		System.out.println("---------------------------------");
 	
 		System.out.println("FindAll");
-		List<Room> rooms = roomdata.findAll();
-		for (int i=0; i<rooms.size(); i++) {
-			System.out.println(rooms.get(i).toString());
+		List<Course> courses = coursedata.findAll();
+		for (int i=0; i<courses.size(); i++) {
+			System.out.println(courses.get(i).toString());
 		}
 		System.out.println("---------------------------------");
 
-		System.out.println("Search");
-		rooms = roomdata.search("CR-");
-		for (int i=0; i<rooms.size(); i++) {
-			System.out.println(rooms.get(i).toString());
-		}
-		System.out.println("---------------------------------");
-	
-		System.out.println("Save");
-		room.setROOM_NAME("LR-03");
-		room.setROOM_FLOUR(1);
-		room.setROOM_CAPACITY(50);
-		room.setROOM_TYPE("Lab Room");
-		room = roomdata.Save(room);
-		System.out.println(room.toString());
-		System.out.println("---------------------------------");
-
-		System.out.println("FindAll");
-		rooms = roomdata.findAll();
-		for (int i=0; i<rooms.size(); i++) {
-			System.out.println(rooms.get(i).toString());
-		}
-		System.out.println("---------------------------------");
+//		System.out.println("Search");
+//		courses = coursedata.search("CR-");
+//		for (int i=0; i<courses.size(); i++) {
+//			System.out.println(courses.get(i).toString());
+//		}
+//		System.out.println("---------------------------------");
+//	
+//		System.out.println("Save");
+//		course.setCOURSE_NAME("LR-03");
+//		course.setCOURSE_FLOUR(1);
+//		course.setCOURSE_CAPACITY(50);
+//		course.setCOURSE_TYPE("Lab Course");
+//		course = coursedata.Save(course);
+//		System.out.println(course.toString());
+//		System.out.println("---------------------------------");
+//
+//		System.out.println("FindAll");
+//		courses = coursedata.findAll();
+//		for (int i=0; i<courses.size(); i++) {
+//			System.out.println(courses.get(i).toString());
+//		}
+//		System.out.println("---------------------------------");
 
 	}
 }

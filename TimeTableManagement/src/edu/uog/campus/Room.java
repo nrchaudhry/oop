@@ -2,7 +2,7 @@ package edu.uog.campus;
 
 public class Room {
 
-	public static String csvFile = "D:\\Rooms.csv";
+	public static String csvFile = "H:\\Rooms.csv";
 
 	private int ROOM_ID;
 	
