@@ -14,6 +14,8 @@ public class TimeTable {
 	private TimeSlot TIMESLOT_ID;
 	
 	private Room ROOM_ID;
+	
+	private Semester SEMESTER_ID;
 
 	public int getTIMETABLE_ID() {
 		return TIMETABLE_ID;
@@ -47,10 +49,19 @@ public class TimeTable {
 		ROOM_ID = rOOM_ID;
 	}
 
+	public Semester getSEMESTER_ID() {
+		return SEMESTER_ID;
+	}
+
+	public void setSEMESTER_ID(Semester sEMESTER_ID) {
+		SEMESTER_ID = sEMESTER_ID;
+	}
+
 	public String toString() {
 		String str = null;
 		
 		str = this.TIMETABLE_ID
+				+ "," + this.SEMESTER_ID.getSemester_ID()
 				+ "," + this.TEACHERCOURSE_ID.getTEACHERCOURSE_ID()
 				+ "," + this.TIMESLOT_ID.getTIMESLOT_ID()
 				+ "," + this.ROOM_ID.getROOM_ID();

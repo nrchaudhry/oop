@@ -1,6 +1,7 @@
 package edu.uog.student;
 
 import edu.uog.course.Course;
+import edu.uog.timetable.Semester;
 
 public class StudentCourse {
 
@@ -11,6 +12,8 @@ public class StudentCourse {
 	private Course COURSE_ID;
 	
 	private Student STUDENT_ID;
+	
+	private Semester SEMESTER_ID;
 	
 	private String SECTION;
 
@@ -38,6 +41,14 @@ public class StudentCourse {
 		STUDENT_ID = sTUDENT_ID;
 	}
 
+	public Semester getSEMESTER_ID() {
+		return SEMESTER_ID;
+	}
+
+	public void setSEMESTER_ID(Semester sEMESTER_ID) {
+		SEMESTER_ID = sEMESTER_ID;
+	}
+
 	public String getSECTION() {
 		return SECTION;
 	}
@@ -50,6 +61,7 @@ public class StudentCourse {
 		String str = null;
 		
 		str = this.STUDENTCOURSE_ID
+				+ "," + this.SEMESTER_ID.getSemester_ID()
 				+ "," + this.COURSE_ID.getCOURSE_ID()
 				+ "," + this.STUDENT_ID.getPERSON_ID()
 				+ "," + this.SECTION;

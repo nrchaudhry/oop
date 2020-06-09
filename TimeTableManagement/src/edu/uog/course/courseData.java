@@ -13,7 +13,7 @@ public class courseData {
 
 
 	@SuppressWarnings("resource")
-	public List<Course> findAll()  {
+	public static List<Course> findAll()  {
 		List<Course> courses = new ArrayList<Course>();
 		String line;
 		
@@ -49,7 +49,7 @@ public class courseData {
 	}
 
 	@SuppressWarnings("resource")
-	public Course findOne(int course_ID)  {
+	public static Course findOne(int course_ID)  {
 		String line;
 		
 		try {
@@ -86,7 +86,44 @@ public class courseData {
 	}
 
 	@SuppressWarnings("resource")
-	public List<Course> search(String search)  {
+	public static Course findByCode(String course_CODE)  {
+		String line;
+		
+		try {
+			BufferedReader bufferreader = new BufferedReader(new FileReader(Course.csvFile));
+			
+			while ((line = bufferreader.readLine()) != null) {
+				Course course = new Course();
+				Course prerequistcourse = new Course();
+				
+				String[] courseRow = line.split(",");
+				
+				if (courseRow[1].contains(course_CODE) == true) {
+					course.setCOURSE_ID(Integer.parseInt(courseRow[0]));
+					course.setCOURSE_CODE(courseRow[1]);
+					course.setCOURSE_TITLE(courseRow[2]);
+					course.setCOURSE_DESC(courseRow[3]);
+					course.setCOURSE_CREDITHOUR(Integer.parseInt(courseRow[4]));
+					
+					if (courseRow.length>5) {
+						courseData cdata = new courseData();
+						prerequistcourse = cdata.findOne(Integer.parseInt(courseRow[5]));
+						course.setCOURSEPRERQUIST_ID(prerequistcourse);
+					}
+										
+					return course;
+				}
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
+
+	@SuppressWarnings("resource")
+	public static List<Course> search(String search)  {
 		List<Course> courses = new ArrayList<Course>();
 		String line;
 		
@@ -117,10 +154,10 @@ public class courseData {
 	}
 
 	@SuppressWarnings("resource")
-	public Course Save(Course course) {
+	public static Course Save(Course course) {
 		FileWriter filewriter;
 
-		List<Course> courses = this.findAll();
+		List<Course> courses = findAll();
 
 		try {
 			filewriter = new FileWriter(Course.csvFile);
