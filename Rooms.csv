@@ -1,12 +1,11 @@
-10,CR-01,1,60,Class Room
-12,CR-02,1,60,Class Room
-13,CR-03,1,60,Class Room
-14,CR-04,1,60,Class Room
-15,CR-05,1,60,Class Room
-16,CR-06,1,60,Class Room
-17,LR-01,2,40,Lab Room
-18,LR-02,2,40,Lab Room
-19,LR-03,1,50,Lab Room
-20,
-21
-22
+1,CR-01,1,60,Class Room
+2,CR-02,1,60,Class Room
+3,CR-03,1,60,Class Room
+4,CR-04,1,60,Class Room
+5,CR-05,1,60,Class Room
+6,CR-06,1,60,Class Room
+7,LR-01,2,40,Lab Room
+8,LR-02,2,40,Lab Room
+10,B-107,1,100,Lab
+11,B-113 A,1,100,Lab room
+12,B-113 B,1,100,Lab Room

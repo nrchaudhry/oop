@@ -10,7 +10,7 @@ import java.util.List;
 public class roomData {
 
 	@SuppressWarnings("resource")
-	public List<Room> findAll()  {
+	public static List<Room> findAll()  {
 		List<Room> rooms = new ArrayList<Room>();
 		String line;
 		
@@ -39,7 +39,7 @@ public class roomData {
 	}
 
 	@SuppressWarnings("resource")
-	public Room findOne(int room_ID)  {
+	public static Room findOne(int room_ID)  {
 		String line;
 		
 		try {
@@ -69,7 +69,33 @@ public class roomData {
 	}
 
 	@SuppressWarnings("resource")
-	public List<Room> search(String search)  {
+	public static Room deleteOne(int room_ID)  {
+		FileWriter filewriter;
+
+		List<Room> rooms = findAll();
+		Room room = findOne(room_ID);
+
+		try {
+			filewriter = new FileWriter(Room.csvFile);
+
+			for (int i=0; i<rooms.size(); i++) {
+				if (rooms.get(i).getROOM_ID() != room_ID) {
+					filewriter.append(rooms.get(i).toString());
+					filewriter.append("\n");
+				}
+			}
+			filewriter.flush();
+			filewriter.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return room;
+	}
+
+	@SuppressWarnings("resource")
+	public static List<Room> search(String search)  {
 		List<Room> rooms = new ArrayList<Room>();
 		String line;
 		
@@ -100,10 +126,10 @@ public class roomData {
 	}
 
 	@SuppressWarnings("resource")
-	public Room Save(Room room) {
+	public static Room Save(Room room) {
 		FileWriter filewriter;
 
-		List<Room> rooms = this.findAll();
+		List<Room> rooms = findAll();
 
 		try {
 			filewriter = new FileWriter(Room.csvFile);
