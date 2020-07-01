@@ -1,143 +1,78 @@
 package edu.uog;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 import edu.uog.campus.Room;
 import edu.uog.campus.roomData;
+
 import edu.uog.campus.roomInterface;
 import edu.uog.course.Course;
 import edu.uog.course.courseData;
+import edu.uog.person.Person;
+import edu.uog.student.Student;
+import edu.uog.teacher.Teacher;
 
 public class TimeTableManagement {
 
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		int choice=-1;
+		courseData coursedata = new courseData();
+		roomData roomdata = new roomData();
 		
-		while (choice!=10) {
-			System.out.println("=====================================================");
-			System.out.println("Main Menu");
-			System.out.println("=====================================================");
-			System.out.println("1.   Rooms");
-			System.out.println("2.   Courses");
-			System.out.println("3.   ");
-			System.out.println("4.   ");
-			System.out.println("10.   Quit");
-			System.out.println("Enter Your Choice [1-10]: ");
-			choice = scan.nextInt();
-	
-			switch (choice) {
-			case 1:
-				roomInterface.RoomManu();
-				choice=-1;
-				break;
+		List<Student> students = new ArrayList<Student>();
+		
+		Person person = new Person();
+		Student student = new Student();
+		Teacher teacher = new Teacher();
+		Person p1 = new Person();
+		
+		Student s1 = new Student();
+		Teacher t1 = new Teacher();
+		
+		p1.setFORE_NAME("USAMA RAHEEM");
+		
+		s1.setPERSON_ID(p1);
+		s1.setSTUDENT_ROLLNO("19011519-001");
+		
+		t1.setPERSON_ID(p1);
+		t1.setEMPLOYEE_CODE("0041");
+		
+		System.out.println("Student Name: "+s1.getPERSON_ID().getFORE_NAME());
+		System.out.println("Teacher Name: "+t1.getPERSON_ID().getFORE_NAME());
+		
 
-			case 2:
-				choice = -1;
-				while (choice!=4) {
-					System.out.println("=====================================================");
-					System.out.println("Course Menu");
-					System.out.println("=====================================================");
-					System.out.println("1.   Insert");
-					System.out.println("2.   Delete");
-					System.out.println("3.   Show");
-					System.out.println("4.   Back");
-					System.out.print("Enter Your Choice [1-4]: ");
-					choice = scan.nextInt();
-		
-					switch (choice) {
-					case 1:
-						System.out.print("Add New Room");
-						Room room = new Room();
-						room.setROOM_NAME("LR-03");
-						room.setROOM_FLOUR(1);
-						room.setROOM_CAPACITY(50);
-						room.setROOM_TYPE("Lab Course");
-						room = roomData.Save(room);
-						System.out.println(room.toString());
-						System.out.println("---------------------------------");
-						break;
-					case 2:
-						break;
-					case 3:
-						System.out.println("FindAll");
-						List<Room> rooms = roomData.findAll();
-						for (int i=0; i<rooms.size(); i++) {
-							System.out.println(rooms.get(i).toString());
-						}
-						System.out.println("---------------------------------");
-						break;
-					case 4:
-						break;
-					}
-				}
-				choice=-1;
-				
-				break;
-			case 3:
-				
-				break;
-			case 4:
-				
-				break;
-			case 10:
-				break;
-			default:
-				System.out.println("Invalid Choice!");
-			}
-		}
-		
-//		roomData roomdata = new roomData();
+//		s2 = s1;
+//		if (s1 == s2)
+//			System.out.println("Student Equal!");
 //		
-//		System.out.println("FindOne");
-//		Course course = coursedata.findOne(1);
-//		System.out.println(course.toString());
-//		System.out.println("---------------------------------");
-//	
-//		System.out.println("FindAll");
-//		List<Course> courses = courseData.findAll();
-//		for (int i=0; i<courses.size(); i++) {
-//			System.out.println(courses.get(i).toString());
-//		}
-//		System.out.println("---------------------------------");
-//
-//		System.out.println("Search");
-//		courses = coursedata.search("CR-");
-//		for (int i=0; i<courses.size(); i++) {
-//			System.out.println(courses.get(i).toString());
-//		}
-//		System.out.println("---------------------------------");
-//	
-//		System.out.println("Save");
-//		Room room = new Room();
-//		room.setROOM_NAME("LR-03");
-//		room.setROOM_FLOUR(1);
-//		room.setROOM_CAPACITY(50);
-//		room.setROOM_TYPE("Lab Course");
-//		room = roomdata.Save(room);
-//		System.out.println(room.toString());
-//		System.out.println("---------------------------------");
-//
-//		System.out.println("FindAll");
-//		courses = coursedata.findAll();
-//		for (int i=0; i<courses.size(); i++) {
-//			System.out.println(courses.get(i).toString());
-//		}
-//		System.out.println("---------------------------------");
-//
-//		System.out.println("Save Course");
-//		Course prerequistcourse = new Course();
-//		prerequistcourse = courseData.findByCode("CS-102");
+//		student.setFORE_NAME("USAMA MUSTAFA");
+//		student.setSTUDENT_ROLLNO("19011519-001");
+//		students.add(student);
 //		
-//		Course course = new Course();
-//		course.setCOURSE_CODE("CS-106");
-//		course.setCOURSE_TITLE("Object Oriented Programming");
-//		course.setCOURSE_DESC("It is programming course");
-//		course.setCOURSE_CREDITHOUR(4);
-//		course.setCOURSEPRERQUIST_ID(prerequistcourse);
-//		course = courseData.Save(course);
-//		System.out.println(room.toString());
-//		System.out.println("---------------------------------");
+//		student = new Student();
+//		student.setFORE_NAME("USAMA RAHEEM");
+//		student.setSTUDENT_ROLLNO("19011519-002");
+//		students.add(student);
+//		
+//		student = new Student();
+//		student.setFORE_NAME("USAMA SAEED");
+//		student.setSTUDENT_ROLLNO("19011519-003");
+//		students.add(student);
+//
+//		student = new Student();
+//		student.setFORE_NAME("Jawad Altaf");
+//		student.setSTUDENT_ROLLNO("19011519-004");
+//		students.add(student);
+//
+//		for (int i=0;i<students.size();i++) {
+//			System.out.println(students.get(i).getSTUDENT_ROLLNO()+"\t"+students.get(i).getFORE_NAME());
+//		}
+//		
+//		person.setFORE_NAME("ABC");
+//
+//		teacher.setFORE_NAME("Dr. Nauman Riaz");
+//		teacher.setTEACHER_ID(1);
+//		
 	}
 }

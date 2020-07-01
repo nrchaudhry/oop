@@ -2,12 +2,14 @@ package edu.uog.student;
 
 import edu.uog.person.Person;
 
-public class Student extends Person {
+public class Student {
 
 	public static String csvFile = "D:\\Students.csv";
 
 	private int STUDENT_ID;
 	
+	private Person PERSON_ID;
+
 	private String STUDENT_ROLLNO;
 	
 	private String STUDY_PROGRAM;
@@ -19,8 +21,15 @@ public class Student extends Person {
 	}
 
 	public void setSTUDENT_ID(int sTUDENT_ID) {
-		AGE = 10;
 		STUDENT_ID = sTUDENT_ID;
+	}
+
+	public Person getPERSON_ID() {
+		return PERSON_ID;
+	}
+
+	public void setPERSON_ID(Person pERSON_ID) {
+		PERSON_ID = pERSON_ID;
 	}
 
 	public String getSTUDENT_ROLLNO() {
