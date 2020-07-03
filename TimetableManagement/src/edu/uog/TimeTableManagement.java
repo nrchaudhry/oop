@@ -26,7 +26,7 @@ public class TimeTableManagement {
 		Student student = new Student();
 		Teacher teacher = new Teacher();
 		
-		person.setFORE_NAME("USAMA RAHEEM");
+		person.setFORE_NAME("USAMA");
 		
 		student.setPERSON_ID(person);
 		student.setSTUDENT_ROLLNO("19011519-001");
