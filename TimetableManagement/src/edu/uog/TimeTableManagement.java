@@ -25,21 +25,17 @@ public class TimeTableManagement {
 		Person person = new Person();
 		Student student = new Student();
 		Teacher teacher = new Teacher();
-		Person p1 = new Person();
 		
-		Student s1 = new Student();
-		Teacher t1 = new Teacher();
+		person.setFORE_NAME("USAMA RAHEEM");
 		
-		p1.setFORE_NAME("USAMA RAHEEM");
+		student.setPERSON_ID(person);
+		student.setSTUDENT_ROLLNO("19011519-001");
 		
-		s1.setPERSON_ID(p1);
-		s1.setSTUDENT_ROLLNO("19011519-001");
+		teacher.setPERSON_ID(person);
+		teacher.setEMPLOYEE_CODE("0041");
 		
-		t1.setPERSON_ID(p1);
-		t1.setEMPLOYEE_CODE("0041");
-		
-		System.out.println("Student Name: "+s1.getPERSON_ID().getFORE_NAME());
-		System.out.println("Teacher Name: "+t1.getPERSON_ID().getFORE_NAME());
+		System.out.println("Student Name: "+student.getPERSON_ID().getFORE_NAME());
+		System.out.println("Teacher Name: "+teacher.getPERSON_ID().getFORE_NAME());
 		
 
 //		s2 = s1;
