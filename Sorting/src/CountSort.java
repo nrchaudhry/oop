@@ -4,7 +4,7 @@ public class CountSort {
 	public static int[] sort(int[] arr, int range) {
 		int[] outputarr = new int[arr.length];
 		int[] countarr = new int[range];
-		
+
 		//Step 1
 		for (int i=0; i<arr.length; i++) {
 			countarr[arr[i]] =  countarr[arr[i]] + 1;
@@ -28,26 +28,10 @@ public class CountSort {
 		int[] outputarr = new int[arr.length];
 		int[] countarr = new int[range];
 		
-		System.out.print("Before Count Array: ");
-		for (int i=0; i<countarr.length; i++) {
-			System.out.print(countarr[i]+", ");
-		}
-		
 		//Step 1
 		for (int i=0; i<arr.length; i++) {
 			int index = arr[i]/count1;
 			countarr[index%10] = countarr[index%10] + 1;
-		}
-		
-		System.out.println("");
-		System.out.print("Unsorted Array: ");
-		for (int i=0; i<arr.length; i++) {
-			System.out.print(arr[i]+", ");
-		}
-		System.out.println("");
-		System.out.print("After Count Array: \n");
-		for (int i=0; i<countarr.length; i++) {
-			System.out.println(i+"\t"+countarr[i]+", ");
 		}
 		
 		//Step 2
